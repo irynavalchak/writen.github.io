@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #e7f1fa;
+}
+
+canvas {
+    background-image: url("images/brain-2789698.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.4;
+}
+
+.header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(34,135,195);
+    background: linear-gradient(0deg, rgba(34,135,195,0.9950105042016807) 10%, rgba(45,56,253,1) 35%);
+}
+
+.header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header p {
+    color: chocolate;
+    font: 600 25px 'Cabin';
+    margin-left: 20px;
+}
+
+.header-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.header-body {
+    position: relative;
+    display: flex;
+    height: 100px;
+    align-items: center;
+}
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.main-nav-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.main-nav:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2387c3;
+    z-index: 2;
+}
+
+.main-nav-body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.main-nav-list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.main-nav-list li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.main-nav-links {
+    position: relative;
+    text-decoration: none;
+    color: #E7F1FA;
+    text-transform: uppercase;
+    font: 500 18px 'Cabin', sans-serif;
+}
+
+.main-nav-links::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #E7F1FA;
+    transition: width 0.3s;
+    transform-origin: left;
+}
+
+.main-nav-links:hover::after {
+    width: 100%;
+}
+
+.main-nav-links::after {
+    width: 0;
+    transition: width 0.3s;
+}
+
+.main-section {
+    width: 100%;
+    background: rgb(79,34,195);
+    background: linear-gradient(0deg, rgba(79,34,195,1) 40%, rgba(45,56,253,1) 100%);
+}
+
+.main-section:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+}
+
+.learn-section {
+    width: 100%;
+    background-color: #E7F1FA;
+}
+
+.learn-section:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+}
+
+.learn-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.learn-body {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: calc(100vh + 50px);
+    align-items: center;
+}
+
+.learn-body h1 {
+    font: 700 40px 'Cabin';
+    color: #d15fa3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.learn-game {
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #4f22c3;
+    border-radius: 70px;
+    padding: 20px;
+}
+
+.learn-game h1 {
+    font: 600 30px 'Cabin';
+    color: #E7F1FA;
+    margin-bottom: 15px;
+}
+
+.learn-game p {
+    color: #de5146;
+    position: relative;
+    bottom: 55px;
+}
+
+.randomForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.randomForm span:first-of-type {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 600 25px 'Cabin';
+    color: #3235f5;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: #E7F1FA;
+}
+
+.randomForm span:last-of-type {
+    width: 250px;
+    height: 30px;
+    color: #E7F1FA;
+    font: 500 25px 'Cabin';
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 30px;
+}
+
+.randomForm input {
+    width: 300px;
+    height: 30px;
+    border-radius: 30px;
+    border: 0;
+    padding-left: 15px;
+}
+
+.randomWordBtn {
+    width: 150px;
+    height: 30px;
+    font: 400 14px 'Cabin';
+    color: #E7F1FA;
+    border: 0;
+    background-color: #d15fa3;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.checkButton {
+    width: 150px;
+    height: 30px;
+    font: 400 14px 'Cabin';
+    color: #E7F1FA;
+    border: 0;
+    background-color: #2387c3;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.btnClean {
+    width: 150px;
+    height: 30px;
+    font: 400 14px 'Cabin';
+    color: #E7F1FA;
+    border: 0;
+    background-color: #DE5146;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.dictionary-section {
+    width: 100%;
+    background-color: #3235f5;
+}
+
+.dictionary-section:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+}
+
+.dictionary-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.dictionary-body {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: calc(100vh + 50px);
+    align-items: center;
+}
+
+.dictionary-body h1 {
+    font: 600 40px 'Cabin';
+    color: #E7F1FA;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.dictionary-body h2 {
+    font: 500 20px 'Cabin';
+    color: #de5146;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.dictionary-body label {
+    font: 500 25px 'Cabin';
+    color: #2387c3;
+    margin-bottom: 5px;
+}
+
+.dictionary-body input {
+    width: 300px;
+    height: 30px;
+    border-radius: 30px;
+    border: 0;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.dictionary-body #addBtn {
+    width: 150px;
+    height: 30px;
+    font: 400 14px 'Cabin';
+    color: #E7F1FA;
+    border: 0;
+    background-color: #4f22c3;
+    border-radius: 20px;
+    text-transform: uppercase;
+    visibility: hidden;
+    margin-bottom: 20px;
+}
+
+.dictionary-body #deleteBtn {
+    width: 150px;
+    height: 30px;
+    font: 400 14px 'Cabin';
+    color: #E7F1FA;
+    border: 0;
+    background-color: #DE5146;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.words-list {
+    width: 400px;
+    height: 400px;
+    background-color:  #E7F1FA;
+    overflow-y: scroll;
+    scroll-padding-left: 100px;
+    padding: 20px;
+    color: #4f22c3;
+    font: 600 30px 'Cabin';
+    border-radius: 5px;
+    text-align: center;
+    border: 2px dashed #de5146;
+}
+
+.words-list li {
+    font: 500 40px 'Cabin';
+}
+
+.words-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.words-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+.words-list::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+.words-list::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+.english-levels-section {
+    width: 100%;
+    background-color: #E7F1FA;
+}
+
+.english-levels-section:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+}
+
+.english-levels-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.english-levels-body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh + 50px);
+    align-items: center;
+}
+
+.english-levels-body h1 {
+    font: 700 40px 'Cabin';
+    color: #d15fa3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.english-levels-body h2 {
+    font: 700 25px/40px 'Cabin';
+    color: #4f22c3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.english-levels-body h2 span {
+    font: 700 20px 'Cabin';
+    color: #3235f5;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.levels-block {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.levels-block div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.levels-block h2 {
+    font: 500 25px 'Cabin';
+    color: #2387c3;
+}
+
+.elementary-level {
+    width: 100px;
+    height: 0;
+    background-color: #3235f5;
+    transition: height 0.5s ease;
+}
+
+.intermediate-level {
+    width: 100px;
+    height: 0;
+    background-color: #4f22c3;
+    transition: height 0.5s ease;
+}
+
+.advanced-level {
+    width: 100px;
+    height: 0;
+    background-color: #de5146;
+    transition: height 0.5s ease;
+}
+
+
+
+
+
+
+

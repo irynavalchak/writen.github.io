@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WrittEn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="header-container">
+            <div class="header-body">
+                <div class="logo">
+                    <img src="images/logo.png" alt="">
+                </div>
+                <p>WrittEn</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="main-nav-container">
+            <div class="main-nav-body">
+                <ul class="main-nav-list">
+                    <li>
+                        <a class="main-nav-links" href="/main">Main</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-links" href="/learn">Learn</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-links" href="/dictionary">My dictionary</a>
+                    </li>
+                    <li>
+                        <a class="main-nav-links" href="/english-levels">English levels</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main-section">
+        <div>
+        </div>
+        <canvas id="canvas">
+        </canvas>
+    </section>
+
+    <section class="learn-section">
+        <div class="learn-container">
+            <div class="learn-body">
+                <h1>Improve your written English easily</h1>
+                <div class="learn-game">
+                    <h1>Random Words Game</h1>
+                    <form class="randomForm" action="/getRandomTranslationTr" method="GET">
+                        <span id="randomWords" data-word-en=""></span>
+                        <input type="text" id="userInput" placeholder="Enter the word">
+                        <button class="randomWordBtn" type="button" id="randomWordBtn">Random word</button>
+                        <button class="checkButton" type="button" id="checkButton">Check</button>
+                        <button class="btnClean" type="button" id="btnClean">Clean</button><br>
+                        <span id="gameResult"></span>
+                        <p>*Add words to your dictionary before starting</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dictionary-section">
+        <div class="dictionary-container">
+            <div class="dictionary-body">
+                <div>
+                    <h1>My dictionary</h1>
+                    <h2>Add new word</h2>
+                    <form action="/addWords" id="wordForm" method="POST">
+                        <label for="wordEn">English word</label><br>
+                        <input name="wordEn" id="wordEn" type="text" required><br>
+                        <label for="wordTr">Translation</label><br>
+                        <input name="wordTr" id="wordTr" type="text" required><br>
+                        <button type="submit" id="addBtn">Add</button>
+                    </form>
+                    <button id="deleteBtn">Delete</button>
+                </div>
+                <div id="wordList" class="words-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="english-levels-section">
+        <div class="english-levels-container">
+            <div class="english-levels-body">
+                <div class="english-levels-body-div">
+                    <h1>English levels</h1>
+                    <h2 class="saying"> Learning another language <br>
+                        is like becoming another person. <br>
+                        <span>Haruki Murakami</span></h2>
+                </div>
+                <div class="levels-block">
+                    <div>
+                        <div class="elementary-level"></div>
+                        <h2>Elementary</h2>
+                    </div>
+                    <div>
+                        <div class="intermediate-level"></div>
+                        <h2>Intermediate</h2>
+                    </div>
+                    <div>
+                        <div class="advanced-level"></div>
+                        <h2>Advanced</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
